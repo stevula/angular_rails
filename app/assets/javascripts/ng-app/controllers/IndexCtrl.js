@@ -17,7 +17,7 @@ angular.module('AngularRails')
     ];
     $scope.addPost = function() {
         // reject if empty
-        if(!scope.title || $scope.title === '') {return;}
+        if(!$scope.title || $scope.title === '') {return;}
         $scope.posts.push({
             title: $scope.title,
             upvotes: 0,
@@ -27,5 +27,11 @@ angular.module('AngularRails')
                 {author: 'Harry', body: 'Just great!', upvotes: 5},
             ]
         });
+    };
+    $scope.incrementUpvotes = function(post) {
+        post.upvotes++;
+    };
+    $scope.decrementUpvotes = function(post) {
+        post.upvotes--;
     };
 }]);
