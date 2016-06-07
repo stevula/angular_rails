@@ -7,6 +7,11 @@ angular
     .when('/', {
         templateUrl: 'index.html',
         controller: 'IndexCtrl'
-    });
+    })
+    .when('/posts/:id', {
+        templateUrl: 'posts.html',
+        controller: 'PostCtrl'
+    })
+    .otherwise('/');
     $locationProvider.html5Mode(true);
 }]);
