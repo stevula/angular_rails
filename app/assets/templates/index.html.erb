@@ -19,7 +19,7 @@
 
         <!-- comments info -->
         <span>
-            <a href="#/posts/{{$index}}">{{post.comments.length}} comments</a>
+            <a href="/posts/{{$index}}">{{post.comments.length}} comments</a>
         </span>
     </li>
 </ul>
@@ -33,7 +33,7 @@
         <div class="form-group">
             <input class="form-control" type="text" placeholder="link" ng-model="link">
         </div>
-        
+
         <button class="btn btn-primary" type="submit">submit post</button>
     </form>
 </div>
