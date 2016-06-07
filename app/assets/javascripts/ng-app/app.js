@@ -5,8 +5,8 @@ angular
 
     $routeProvider
     .when('/', {
-        templateUrl: 'home.html',
-        controller: 'HomeCtrl'
+        templateUrl: 'index.html',
+        controller: 'IndexCtrl'
     });
     $locationProvider.html5Mode(true);
 }]);
