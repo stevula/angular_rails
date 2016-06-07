@@ -12,7 +12,6 @@ angular.module('AngularRails')
             title: 'Sample title 2',
             author: 'Sample author 2',
             upvotes: 50,
-            link: 'sample.com',
             comments: []
         },
     ];
