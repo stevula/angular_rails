@@ -1,6 +1,17 @@
-<div class="page-header">
-    <h1>
-        <a href="{{post.link}}" ng-show="post.link">{{post.title}}</a>
-        <span ng-hide="post.link">{{post.title}}</span>
-    </h1>
+<h3>
+    <a href="{{post.link}}" ng-show="post.link">{{post.title}}</a>
+    <span ng-hide="post.link">{{post.title}}</span>
+</h3>
+<article ng-show="post.body">{{post.body}}</article>
+
+<!-- comments -->
+<h4>Comments</h4>
+<div ng-repeat="comment in post.comments | orderBy: '-upvotes'">
+    <!-- comment voting arrows -->
+    <span class="glyphicon glyphicon-arrow-up" ng-click="incrementUpvotes(comment)"></span>
+    <span class="glyphicon glyphicon-arrow-down" ng-click="decrementUpvotes(comment)"></span>
+    {{comment.upvotes}} - by {{comment.author}}
+
+    <!-- comment body -->
+    <div class="comment-body">{{comment.body}}</div>
 </div>

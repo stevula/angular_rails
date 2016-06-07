@@ -1,6 +1,7 @@
 angular.module('AngularRails')
 .controller('IndexCtrl', ['$scope', 'posts', function($scope, posts) {
     $scope.posts = posts.posts;
+    
     $scope.addPost = function() {
         // reject if empty
         if(!$scope.title || $scope.title === '') {return;}
