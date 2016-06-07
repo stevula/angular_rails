@@ -7,7 +7,7 @@
         <span class="glyphicon glyphicon-arrow-down" ng-click="decrementUpvotes(post)"></span>
 
         <!-- post info -->
-        <span class="post-listing">
+        <span class="post">
             <a href="{{post.link}}" ng-show="post.link">{{post.title}}</a>
             <span ng-hide="post.link">{{post.title}}</span>
             - upvotes: {{post.upvotes}}
@@ -22,7 +22,7 @@
 
 <!-- add post form -->
 <div class="col-md-8 col-md-offset-2">
-    <form class="post-add" ng-submit="addPost()">
+    <form class="post-add-form" ng-submit="addPost()">
         <div class="form-group">
             <input class="form-control" type="text" placeholder="title" ng-model="title">
         </div>

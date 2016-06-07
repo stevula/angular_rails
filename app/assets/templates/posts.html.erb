@@ -6,7 +6,7 @@
 
 <!-- comments -->
 <h4>Comments</h4>
-<div ng-repeat="comment in post.comments | orderBy: '-upvotes'">
+<div class="comment" ng-repeat="comment in post.comments | orderBy: '-upvotes'">
     <!-- comment voting arrows -->
     <span class="glyphicon glyphicon-arrow-up" ng-click="incrementUpvotes(comment)"></span>
     <span class="glyphicon glyphicon-arrow-down" ng-click="decrementUpvotes(comment)"></span>
