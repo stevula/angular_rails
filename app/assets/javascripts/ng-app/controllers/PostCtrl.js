@@ -1,6 +1,7 @@
 angular.module('AngularRails')
-.controller('PostsCtrl', ['$scope', '$routeParams', 'posts', 
+.controller('PostCtrl', ['$scope', '$routeParams', 'posts', 
     function($scope, $routeParams, posts) {
+        // TODO: assumes id is equal to array index...
         $scope.post = posts.posts[$routeParams.id];
         $scope.addComment = function() {
             // reject if comment body empty
