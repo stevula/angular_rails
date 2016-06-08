@@ -1,17 +1,7 @@
-angular.module('Diggit')
-.controller('SidebarCtrl', ['$scope', function($scope) {
-    $scope.addPost = function() {
-        // reject if empty
-        if(!$scope.title || $scope.title === '') {return;}
-
-        $scope.posts.push({
-            title: $scope.title,
-            upvotes: 0,
-            link: $scope.link,
-            comments: [
-                {author: 'Barry', body: 'Just awful...', upvotes: 2},
-                {author: 'Harry', body: 'Just great!', upvotes: 5},
-            ]
-        });
-    };
+angular.module('diggit')
+.controller('SidebarCtrl', ['$scope', 'post', function($scope, post) {
+    $scope.posts = post.posts;
+    $scope.addPost = post.addPost;
+    // default post type for sidebar form
+    $scope.post = {type: "link"};
 }]);

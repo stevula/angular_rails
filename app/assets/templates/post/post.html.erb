@@ -1,0 +1,12 @@
+<post-detail></post-detail>
+
+<!-- comments -->
+<h4>Comments</h4>
+
+<ul class="posts-list list-group">
+    <li class="list-group-item" ng-repeat="comment in post.comments | orderBy: '-upvotes'">
+
+        <comment></comment>
+
+    </li>
+</ul>

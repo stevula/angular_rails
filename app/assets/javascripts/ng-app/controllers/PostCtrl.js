@@ -1,16 +1,10 @@
-angular.module('Diggit')
-.controller('PostCtrl', ['$scope', '$routeParams', 'posts', 
-    function($scope, $routeParams, posts) {
-        $scope.post = posts.posts[$routeParams.id];
+angular.module('diggit')
+.controller('PostCtrl', ['$scope', '$routeParams', 'post', 
+    function($scope, $routeParams, post) {
+        $scope.post = post.posts[$routeParams.id];
 
-        $scope.addComment = function() {
-            // reject if comment body empty
-            if(!$scope.body || $scope.body === '') {return;}
-
-            $scope.post.comments.push({
-                body: $scope.body,
-                upvotes: 0,
-                author: 'default user'
-            });
-        };
-    }]);
+        // TODO: DRYer solution? comment voting methods below identical to post 
+        // voting methods
+        $scope.incrementUpvotes = post.incrementUpvotes;
+        $scope.decrementUpvotes = post.decrementUpvotes;
+}]);
