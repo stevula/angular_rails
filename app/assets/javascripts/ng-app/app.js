@@ -5,8 +5,8 @@ angular
 
     $routeProvider
     .when('/', {
-        templateUrl: 'index.html',
-        controller: 'IndexCtrl'
+        templateUrl: 'main.html',
+        controller: 'MainCtrl'
     })
     .when('/posts/:id*', {
         templateUrl: 'posts.html',
