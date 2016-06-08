@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   root 'application#index'
-  get '*path' => 'application#index'
 
-  resources :post, only: [:create, :update, :destroy]
+  scope '/api' do
+    scope '/posts' do
+      get '/' => 'api_posts#index'
+      post '/' => 'api_posts#create'
+    end
+  end
+
+  get '*path' => 'application#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

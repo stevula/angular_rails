@@ -3,5 +3,5 @@ angular.module('diggit')
     $scope.posts = post.posts;
     $scope.addPost = post.addPost;
     // default post type for sidebar form
-    $scope.post = {type: "link"};
+    $scope.post = {mediaType: "link"};
 }]);
