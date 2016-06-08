@@ -4,19 +4,38 @@
 
 <div class="col-md-6 col-md-offset-2">
 
+    <!-- TEMPLATES RENDER HERE -->
     <div ng-view=""></div>
 
 </div>
 
 <!-- sidebar -->
 <aside class="col-md-2" ng-controller="SidebarCtrl">
+
     <!-- add post form -->
     <form class="post-add-form" ng-submit="addPost(post)">
+
+        <!-- post type toggle -->
+        <p>Post type:</p>
+        <div class="form-group">
+            <label for="link">Link</label>
+            <input type="radio" name="post-type" value="link" ng-model="post.type">
+            <label for="text">Text</label>
+            <input type="radio" name="post-type" value="text" ng-model="post.type">
+        </div>
+
         <div class="form-group">
             <input class="form-control" type="text" placeholder="title" ng-model="post.title">
         </div>
+
         <div class="form-group">
-            <input class="form-control" type="text" placeholder="link" ng-model="post.link">
+            <input class="form-control" type="text" placeholder="link" ng-model="post.link"
+            ng-show="post.type == 'link'">
+        </div>
+
+        <div class="form-group">
+            <textarea class="form-control" placeholder="write post here" ng-model="post.body"
+            ng-show="post.type == 'text'"></textarea>
         </div>
 
         <button class="btn btn-primary" type="submit">submit post</button>

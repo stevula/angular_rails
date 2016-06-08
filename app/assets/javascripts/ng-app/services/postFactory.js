@@ -2,6 +2,7 @@ angular.module('diggit')
 .factory('post', function() {
     return {
         posts: [{
+            type: 'link',
             title: 'Sample title',
             author: 'Sample author',
             upvotes: 9,
@@ -12,6 +13,7 @@ angular.module('diggit')
             ]
         },
         {
+            type: 'text',
             title: 'Sample title 2',
             author: 'Sample author 2',
             upvotes: 50,
@@ -21,11 +23,13 @@ angular.module('diggit')
         addPost: function(post) {
             // reject if empty
             if(!post.title || post.title === '') {return;}
-            
+            console.log(post)
             this.posts.push({
+                type: post.type,
                 title: post.title,
-                upvotes: 0,
                 link: post.link,
+                body: post.body,
+                upvotes: 0,
                 comments: [
                     {author: 'Barry', body: 'Just awful...', upvotes: 2},
                     {author: 'Harry', body: 'Just great!', upvotes: 5},

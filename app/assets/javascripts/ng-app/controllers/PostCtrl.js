@@ -3,7 +3,8 @@ angular.module('diggit')
     function($scope, $routeParams, post) {
         $scope.post = post.posts[$routeParams.id];
 
-        // TODO: DRYer solution? below are repeated from MainCtrl. 
+        // TODO: DRYer solution? comment voting methods below identical to post 
+        // voting methods
         $scope.incrementUpvotes = post.incrementUpvotes;
         $scope.decrementUpvotes = post.decrementUpvotes;
 }]);

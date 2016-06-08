@@ -20,7 +20,7 @@ angular
 // TODO: enable posting body-only posts
 // TODO: add users
 // TODO: persist data in back-end - watch out for race conditions
-// TODO: prohibit double-posting (except vote reversal)
+// TODO: prohibit double-voting (except vote reversal)
 // TODO: pagination
 // TODO: prettify
 // TODO: filters
