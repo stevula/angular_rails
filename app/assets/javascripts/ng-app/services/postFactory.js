@@ -2,7 +2,7 @@ angular.module('diggit')
 .factory('post', function() {
     return {
         posts: [{
-            type: 'link',
+            mediaType: 'link',
             category: 'random',
             title: 'Sample title',
             author: 'Sample author',
@@ -16,7 +16,7 @@ angular.module('diggit')
             updatedOn: new Date()
         },
         {
-            type: 'text',
+            mediaType: 'text',
             category: 'tech',
             title: 'Sample title 2',
             author: 'Sample author 2',
@@ -31,7 +31,7 @@ angular.module('diggit')
             if(!post.title || post.title === '') {return;}
             console.log(post)
             this.posts.push({
-                type: post.type,
+                mediaType: post.mediaType,
                 title: post.title,
                 link: post.link,
                 body: post.body,

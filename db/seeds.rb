@@ -1,11 +1,14 @@
-TYPES = ["link", "text"]
+MEDIA = ["link", "text"]
 CATEGORIES = ["random", "tech", "gaming", "food"]
 
 60.times do
-  Post.create(
-    type: TYPES.sample,
+  Post.create!(
+    media_type: MEDIA.sample,
     category: CATEGORIES.sample,
-    title: Faker
-    author: Faker::Internet.user_name
+    title: Faker::Hipster.sentence,
+    author: Faker::Internet.user_name,
+    upvotes: rand(100),
+    link: Faker::Internet.url,
+    body: Faker::Lorem.paragraph
   )
 end
