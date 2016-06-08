@@ -1,5 +1,5 @@
 angular
-.module('Diggit', ['ngRoute', 'templates'])
+.module('diggit', ['ngRoute', 'templates'])
 .config(['$routeProvider', '$locationProvider', 
     function($routeProvider, $locationProvider) {
 
@@ -32,3 +32,4 @@ angular
 // TODO: show post date/time or how long ago
 // TODO: make logo
 // TODO: client side validations / errors
+// TODO: moderators

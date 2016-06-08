@@ -1,5 +1,5 @@
 <div class="page-header col-md-8 col-md-offset-2">
-    <h1><a href="/">Diggit</a></h1>
+    <h1><a href="/">diggit</a></h1>
 </div>
 
 <div class="col-md-6 col-md-offset-2">
@@ -8,14 +8,15 @@
 
 </div>
 
+<!-- sidebar -->
 <aside class="col-md-2" ng-controller="MainCtrl">
     <!-- add post form -->
-    <form class="post-add-form" ng-submit="addPost()">
+    <form class="post-add-form" ng-submit="addPost(post)">
         <div class="form-group">
-            <input class="form-control" type="text" placeholder="title" ng-model="title">
+            <input class="form-control" type="text" placeholder="title" ng-model="post.title">
         </div>
         <div class="form-group">
-            <input class="form-control" type="text" placeholder="link" ng-model="link">
+            <input class="form-control" type="text" placeholder="link" ng-model="post.link">
         </div>
 
         <button class="btn btn-primary" type="submit">submit post</button>
