@@ -1,9 +1,6 @@
 angular.module('diggit')
 .controller('MainCtrl', ['$scope', 'post', '$http', function($scope, post, $http) {
-    // $scope.posts = post.posts;
-    $http.get('/api/posts')
-    .then(function(resp) {
-        console.log(resp.data)
+    post.getPosts().then(function(resp) {
         $scope.posts = resp.data;
     });
 
