@@ -10,7 +10,7 @@
     <!-- comment voting arrows -->
     <span class="glyphicon glyphicon-arrow-up" ng-click="incrementUpvotes(comment)"></span>
     <span class="glyphicon glyphicon-arrow-down" ng-click="decrementUpvotes(comment)"></span>
-    {{comment.upvotes}} - by {{comment.author}}
+    <span class="badge">{{comment.upvotes}}</span> - by {{comment.author}}
 
     <!-- comment body -->
     <div class="comment-body">{{comment.body}}</div>
