@@ -3,6 +3,7 @@ angular.module('diggit')
     return {
         posts: [{
             type: 'link',
+            category: 'random',
             title: 'Sample title',
             author: 'Sample author',
             upvotes: 9,
@@ -16,6 +17,7 @@ angular.module('diggit')
         },
         {
             type: 'text',
+            category: 'tech',
             title: 'Sample title 2',
             author: 'Sample author 2',
             upvotes: 50,

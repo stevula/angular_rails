@@ -35,3 +35,4 @@ angular
 // TODO: allow commenting on comments
 // TODO: allow editing posts
 // TODO: allow deleting posts
+// TODO: figure out how to share voting arrows between posts and comments (diff model, same function)
