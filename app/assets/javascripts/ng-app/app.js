@@ -5,11 +5,11 @@ angular
 
     $routeProvider
     .when('/', {
-        templateUrl: 'main.html',
+        templateUrl: 'main/main.html',
         controller: 'MainCtrl'
     })
     .when('/posts/:id*', {
-        templateUrl: 'posts.html',
+        templateUrl: 'post/post.html',
         controller: 'PostCtrl'
     })
     .otherwise('/');
