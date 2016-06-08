@@ -3,9 +3,11 @@
     <li class="post list-group-item" ng-repeat="post in posts | orderBy: '-upvotes'">
 
         <!-- voting arrows -->
-        <span class="glyphicon glyphicon-arrow-up pull-left" ng-click="incrementUpvotes(post)"></span>
-        <span class="badge pull-left">{{post.upvotes}}</span>
-        <span class="glyphicon glyphicon-arrow-down pull-left" ng-click="decrementUpvotes(post)"></span>
+        <div>
+            <span class="glyphicon glyphicon-arrow-up pull-left" ng-click="incrementUpvotes(post)"></span>
+            <span class="badge pull-left">{{post.upvotes}}</span>
+            <span class="glyphicon glyphicon-arrow-down pull-left" ng-click="decrementUpvotes(post)"></span>
+        </div>
 
         <!-- post info -->
         <span class="post">
@@ -18,5 +20,10 @@
         <span>
             <a href="/posts/{{posts.indexOf(post)}}">{{post.comments.length}} comments</a>
         </span>
+
+        <!-- post date -->
+        <div>
+            posted on {{post.createdOn | date}}
+        </div>
     </li>
 </ul>

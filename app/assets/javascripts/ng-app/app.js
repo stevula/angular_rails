@@ -27,7 +27,11 @@ angular
 // TODO: user to user messaging
 // TODO: user prefs (bg color, etc)
 // TODO: categories
-// TODO: show post date/time or how long ago
+// TODO: show time as time ago
 // TODO: make logo
 // TODO: client side validations / errors
 // TODO: moderators
+// TODO: align voting arrows better
+// TODO: allow commenting on comments
+// TODO: allow editing posts
+// TODO: allow deleting posts
