@@ -6,12 +6,18 @@
 
 <!-- comments -->
 <h4>Comments</h4>
-<div class="comment" ng-repeat="comment in post.comments | orderBy: '-upvotes'">
-    <!-- comment voting arrows -->
-    <span class="glyphicon glyphicon-arrow-up" ng-click="incrementUpvotes(comment)"></span>
-    <span class="glyphicon glyphicon-arrow-down" ng-click="decrementUpvotes(comment)"></span>
-    <span class="badge">{{comment.upvotes}}</span> - by {{comment.author}}
 
-    <!-- comment body -->
-    <div class="comment-body">{{comment.body}}</div>
-</div>
+<ul class="posts-list list-group">
+    <li class="post list-group-item" ng-repeat="comment in post.comments | orderBy: '-upvotes'">
+
+        <!-- comment voting arrows -->
+        <span class="glyphicon glyphicon-arrow-up pull-left" ng-click="incrementUpvotes(comment)"></span>
+        <span class="badge pull-left">{{comment.upvotes}}</span>
+        <span class="glyphicon glyphicon-arrow-down pull-left" ng-click="decrementUpvotes(comment)"></span>
+         &mdash; by {{comment.author}}
+
+        <!-- comment body -->
+        <div class="comment-body">{{comment.body}}</div>
+
+    </li>
+</ul>

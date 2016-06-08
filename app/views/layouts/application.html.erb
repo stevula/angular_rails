@@ -9,14 +9,29 @@
 </head>
 <body ng-app="AngularRails">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <div class="page-header">
-              <h1><a href="/">Diggit</a></h1>
-          </div>
-        
+        <div class="page-header col-md-8 col-md-offset-2">
+            <h1><a href="/">Diggit</a></h1>
+        </div>
+
+        <div class="col-md-6 col-md-offset-2">
+
             <%= yield %>
 
         </div>
+
+        <aside class="col-md-2">
+            <!-- add post form -->
+            <form class="post-add-form" ng-submit="addPost()">
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="title" ng-model="title">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="link" ng-model="link">
+                </div>
+
+                <button class="btn btn-primary" type="submit">submit post</button>
+            </form>
+        </aside>
     </div>
 </body>
 </html>
