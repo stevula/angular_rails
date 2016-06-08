@@ -3,7 +3,7 @@ angular.module('diggit')
     function($scope, $routeParams, post) {
         $scope.post = post.posts[$routeParams.id];
 
-        $scope.addPost = post.addPost;
+        // TODO: DRYer solution? below are repeated from MainCtrl. 
         $scope.incrementUpvotes = post.incrementUpvotes;
         $scope.decrementUpvotes = post.decrementUpvotes;
 }]);

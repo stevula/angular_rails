@@ -18,7 +18,6 @@ angular
 }]);
 
 // TODO: enable posting body-only posts
-// TODO: refactor to remove repetition between posts and comments (prob service)
 // TODO: add users
 // TODO: persist data in back-end - watch out for race conditions
 // TODO: prohibit double-posting (except vote reversal)
