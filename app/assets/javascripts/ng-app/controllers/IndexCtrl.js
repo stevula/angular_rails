@@ -1,4 +1,4 @@
-angular.module('AngularRails')
+angular.module('Diggit')
 .controller('IndexCtrl', ['$scope', 'posts', function($scope, posts) {
     $scope.posts = posts.posts;
     

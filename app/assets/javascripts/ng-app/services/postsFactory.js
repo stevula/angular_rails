@@ -1,4 +1,4 @@
-angular.module('AngularRails')
+angular.module('Diggit')
 .factory('posts', function() {
     return {
         posts: [{

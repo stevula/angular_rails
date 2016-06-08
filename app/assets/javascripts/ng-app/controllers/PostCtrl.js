@@ -1,4 +1,4 @@
-angular.module('AngularRails')
+angular.module('Diggit')
 .controller('PostCtrl', ['$scope', '$routeParams', 'posts', 
     function($scope, $routeParams, posts) {
         $scope.post = posts.posts[$routeParams.id];

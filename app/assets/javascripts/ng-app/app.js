@@ -1,5 +1,5 @@
 angular
-.module('AngularRails', ['ngRoute', 'templates'])
+.module('Diggit', ['ngRoute', 'templates'])
 .config(['$routeProvider', '$locationProvider', 
     function($routeProvider, $locationProvider) {
 
