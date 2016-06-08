@@ -16,3 +16,19 @@ angular
 
     $locationProvider.html5Mode(true);
 }]);
+
+// TODO: enable posting body-only posts
+// TODO: refactor to remove repetition between posts and comments (prob service)
+// TODO: add users
+// TODO: persist data in back-end - watch out for race conditions
+// TODO: prohibit double-posting (except vote reversal)
+// TODO: pagination
+// TODO: prettify
+// TODO: filters
+// TODO: image/video posting
+// TODO: user to user messaging
+// TODO: user prefs (bg color, etc)
+// TODO: categories
+// TODO: show post date/time or how long ago
+// TODO: make logo
+// TODO: client side validations / errors

@@ -13,4 +13,10 @@ angular.module('Diggit')
                 author: 'default user'
             });
         };
+        $scope.incrementUpvotes = function(post) {
+            post.upvotes++;
+        };
+        $scope.decrementUpvotes = function(post) {
+            post.upvotes--;
+        };
     }]);
