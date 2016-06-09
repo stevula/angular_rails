@@ -7,14 +7,10 @@ angular.module('diggit')
         createPost: function(post) {
             // reject if empty
             if(!post.title || post.title === '') {return;}
+            // placeholder
+            post.author = "anonymous";
 
-            // placeholder data
-            post.comments = [
-                {author: 'Barry', body: 'Just awful...', upvotes: 2},
-                {author: 'Harry', body: 'Just great!', upvotes: 5},
-            ];
-
-            $http.post('/api/posts');
+            return $http.post('/api/posts', post);
         },
         incrementUpvotes: function(post) {
             post.upvotes++;
