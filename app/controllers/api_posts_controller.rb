@@ -3,10 +3,19 @@ class ApiPostsController < ApplicationController
     render json: Post.all
   end
 
+  def show
+    post = Post.find(params[:id])
+    p post
+    render json: post
+  end
+
   def create
     post = Post.new(post_params)
+
+    # TODO: add some conditional logic here
     post.save
-    render json: Post.all
+    
+    render json: post
   end
 
   private

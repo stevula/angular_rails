@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     scope '/posts' do
       get '/' => 'api_posts#index'
       post '/' => 'api_posts#create'
+      
+      scope '/:id' do
+        get '/' => 'api_posts#show'
+      end
     end
   end
 
