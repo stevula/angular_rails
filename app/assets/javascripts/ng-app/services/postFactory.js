@@ -1,6 +1,6 @@
 angular.module('diggit')
 .factory('post', ['$http', function($http) {
-    return {
+    var post = {
         getPosts: function() {
             return $http.get('/api/posts');
         },
@@ -29,4 +29,6 @@ angular.module('diggit')
             post.upvotes--;
         }
     };
+
+    return post;
 }]);
