@@ -20,6 +20,11 @@ angular.module('diggit')
         },
         decrementUpvotes: function(post) {
             post.upvotes--;
+        },
+        posts: function() {
+            return this.getPosts().then(function(resp) {
+                return resp.data;
+            });
         }
     };
 

@@ -4,6 +4,8 @@ angular.module('diggit')
         $scope.posts = resp.data;
     });
 
+    console.log(post.posts())
+
     $scope.incrementUpvotes = post.incrementUpvotes;
     $scope.decrementUpvotes = post.decrementUpvotes;
 }]);
