@@ -35,3 +35,9 @@ angular
 // TODO: allow commenting on comments
 // TODO: allow editing posts
 // TODO: allow deleting posts
+// TODO: figure out how to share voting arrows between posts and comments (diff model, same function)
+// TODO: cut down on http requests?
+// TODO: getPostById
+// TODO: reference posts by id key instead of array index
+// TODO: show author on post detail page
+// TODO: fix prob where new posts don't auto appear in index (MainCtrl scope issue)
