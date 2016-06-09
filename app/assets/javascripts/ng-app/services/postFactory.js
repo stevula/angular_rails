@@ -4,6 +4,9 @@ angular.module('diggit')
         getPosts: function() {
             return $http.get('/api/posts');
         },
+        getPostById: function(id) {
+            return $http.get('/api/posts/' + id);
+        },
         createPost: function(post) {
             // reject if empty
             if(!post.title || post.title === '') {return;}
