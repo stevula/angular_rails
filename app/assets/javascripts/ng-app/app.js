@@ -36,3 +36,6 @@ angular
 // TODO: allow editing posts
 // TODO: allow deleting posts
 // TODO: figure out how to share voting arrows between posts and comments (diff model, same function)
+// TODO: cut down on http requests?
+// TODO: getPostById
+// TODO: reference posts by id key instead of array index
