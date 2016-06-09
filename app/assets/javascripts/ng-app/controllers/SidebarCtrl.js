@@ -10,8 +10,8 @@ angular.module('diggit')
     $scope.createPost = function() {
         post.createPost($scope.post)
         .then(function(resp) {
-            console.log(post)
-            $scope.posts.push(post);
+            // TODO: want the resp to contain the new post
+            $scope.posts.push($scope.post);
             $scope.post = {mediaType: "link"};
         });
     };
