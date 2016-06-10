@@ -18,6 +18,21 @@ angular.module('diggit')
         post.createPost($scope.post)
         .then(function(resp) {
             $scope.post = resp.data;
+
+            // placeholder
+            $scope.post.comments = [{
+                author: 'anon',
+                body: "Potato chips",
+                upvotes: 0,
+                createdAt: new Date()
+            },
+            {
+                author: "sue",
+                body: "freakazoid",
+                upvotes: 0,
+                createdAt: new Date()
+            }];
+
             post.posts.push($scope.post);
 
             // reset

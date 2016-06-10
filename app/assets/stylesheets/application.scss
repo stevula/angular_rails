@@ -14,11 +14,43 @@
 @import 'bootstrap';
 
 [class*='glyphicon-arrow'] {
+  display: block;
   cursor: pointer;
   font-size: large;
+
+}
+
+.glyphicon-arrow-up.voted {
+  color: green;
+}
+
+.glyphicon-arrow-down.voted {
+  color: red;
+}
+
+.arrows {
+  display: inline-block;
+}
+
+.badge {
+  margin-bottom: 50%;
 }
 
 .posts-list {
   list-style-type: none;
   padding: 0;
+}
+
+vote-arrows {
+  float: left;
+  margin-right: 5px;
+}
+
+comment-list {
+  margin-top: 2em;
+  display: block;
+}
+
+post-content {
+  display: block;
 }
