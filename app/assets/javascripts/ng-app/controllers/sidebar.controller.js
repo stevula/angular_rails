@@ -1,5 +1,5 @@
 angular.module('diggit')
-.controller('SidebarCtrl', ['$scope', 'post', function($scope, post) {
+.controller('SidebarCtrl', ['$scope', 'post', 'posts', function($scope, post, posts) {
     var defaultPost = {
         mediaType: "link",
         category: "random",
@@ -11,8 +11,9 @@ angular.module('diggit')
         createdAt: new Date(),
         updatedAt: new Date(),
     };
+
     $scope.post = angular.copy(defaultPost);
-    $scope.posts = post.posts;
+    $scope.posts = posts.posts;
 
     $scope.createPost = function() {
         post.createPost($scope.post)

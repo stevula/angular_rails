@@ -1,0 +1,1 @@
+angular.module('diggit').value('posts', {posts: []});

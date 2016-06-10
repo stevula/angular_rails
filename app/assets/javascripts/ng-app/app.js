@@ -15,6 +15,11 @@ angular
     .otherwise('/');
 
     $locationProvider.html5Mode(true);
+}])
+.run(['post', 'posts', function(post, posts) {
+    post.getPosts().then(function(resp) {
+        posts.posts = resp.data;
+    });
 }]);
 
 // TODO: add users
@@ -31,6 +36,7 @@ angular
 // TODO: client side validations / errors
 // TODO: moderators
 // TODO: align voting arrows better
+// TODO: enable commenting
 // TODO: allow commenting on comments
 // TODO: allow editing posts
 // TODO: allow deleting posts
