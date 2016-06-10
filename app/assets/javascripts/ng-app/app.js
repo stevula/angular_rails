@@ -16,29 +16,3 @@ angular
 
     $locationProvider.html5Mode(true);
 }]);
-
-// TODO: add users
-// TODO: pagination
-// TODO: prettify
-// TODO: post filters
-// TODO: image/video posting
-// TODO: user to user messaging
-// TODO: user prefs (bg color, etc)
-// TODO: categories
-// TODO: show time as time ago
-// TODO: make logo
-// TODO: client side validations / errors
-// TODO: moderators
-// TODO: enable commenting
-// TODO: allow commenting on comments
-// TODO: allow editing posts
-// TODO: allow deleting posts
-// TODO: show author on post detail page
-// TODO: show author on post view and listing
-// TODO: change color of vote arrow on click
-// TODO: show last edited on
-// TODO: tidy up CSS
-// TODO: api integrations?
-// TODO: track downvotes as well as upvotes
-// TODO: create directives from comment/post forms
-// TODO: comment controller?
