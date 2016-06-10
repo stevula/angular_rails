@@ -12,8 +12,10 @@ I'm building this app to gain a better understanding of AngularJS (v1). I starte
 
 1. Clone the repo to your computer.
 2. Run ```bundler install``` from your terminal.
-3. Run ```rails server```.
-4. Go to ```http://localhost:3000/``` in your browser.
+3. Run ```rake db:create & rake db:migrate```.
+4. (optional) Run ```rake db:seed``` if you want to populate with sample data.
+5. Run ```rails server```.
+6. Go to ```http://localhost:3000/``` in your browser.
 
 ### Dependencies (WIP)
 - Ruby
