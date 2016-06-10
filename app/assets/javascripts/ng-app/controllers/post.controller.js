@@ -7,6 +7,7 @@ angular.module('diggit')
         $scope.$watch('postFactory.posts', function(data) {
             $scope.post = $filter('filter')(post.posts, {id: Number($routeParams.id)})[0];
         });
+        
         // TODO: DRYer solution? comment voting methods below identical to post 
         // voting methods
         $scope.incrementUpvotes = post.incrementUpvotes;
