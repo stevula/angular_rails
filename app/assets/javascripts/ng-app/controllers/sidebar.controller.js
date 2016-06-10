@@ -11,14 +11,14 @@ angular.module('diggit')
         createdAt: new Date(),
         updatedAt: new Date(),
     };
-    $scope.post = defaultPost;
+    $scope.post = angular.copy(defaultPost);
     $scope.posts = post.posts;
 
     $scope.createPost = function() {
         post.createPost($scope.post)
         .then(function(resp) {
             post.posts.push($scope.post);
-            $scope.post = defaultPost;
+            $scope.post = angular.copy(defaultPost);
         });
     };
 }]);

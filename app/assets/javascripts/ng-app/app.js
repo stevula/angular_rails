@@ -40,3 +40,4 @@ angular
 // TODO: reference posts by id key instead of array index
 // TODO: show author on post detail page
 // TODO: fix prob where new posts don't auto appear in index (MainCtrl scope issue)
+// TODO: show author on post view and listing
