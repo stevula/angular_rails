@@ -2,6 +2,7 @@ angular.module('diggit')
 .factory('post', ['$http', function($http) {
     var post = {};
 
+    post.posts = [];
     post.getPosts = function() {
         return $http.get('/api/posts');
     };
