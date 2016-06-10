@@ -17,6 +17,15 @@
   display: block;
   cursor: pointer;
   font-size: large;
+
+}
+
+.glyphicon-arrow-up.voted {
+  color: green;
+}
+
+.glyphicon-arrow-down.voted {
+  color: red;
 }
 
 .arrows {
@@ -35,4 +44,13 @@
 vote-arrows {
   float: left;
   margin-right: 5px;
+}
+
+comment-list {
+  margin-top: 2em;
+  display: block;
+}
+
+post-content {
+  display: block;
 }

@@ -23,16 +23,17 @@ angular.module('diggit')
             $scope.post.comments = [{
                 author: 'anon',
                 body: "Potato chips",
-                upvotes: 0
+                upvotes: 0,
+                createdAt: new Date()
             },
             {
                 author: "sue",
                 body: "freakazoid",
-                upvotes: 0
+                upvotes: 0,
+                createdAt: new Date()
             }];
 
             post.posts.push($scope.post);
-            console.log($scope.post.comments)
 
             // reset
             $scope.post = angular.copy(defaultPost);

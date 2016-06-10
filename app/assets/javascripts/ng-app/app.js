@@ -21,7 +21,7 @@ angular
 // TODO: prohibit double-voting (except vote reversal)
 // TODO: pagination
 // TODO: prettify
-// TODO: filters
+// TODO: post filters
 // TODO: image/video posting
 // TODO: user to user messaging
 // TODO: user prefs (bg color, etc)
@@ -30,12 +30,13 @@ angular
 // TODO: make logo
 // TODO: client side validations / errors
 // TODO: moderators
-// TODO: align voting arrows better
 // TODO: enable commenting
 // TODO: allow commenting on comments
 // TODO: allow editing posts
 // TODO: allow deleting posts
-// TODO: figure out how to share voting arrows between posts and comments (diff model, same function)
 // TODO: show author on post detail page
 // TODO: show author on post view and listing
 // TODO: change color of vote arrow on click
+// TODO: show last edited on
+// TODO: tidy up CSS
+// TODO: api integrations?
