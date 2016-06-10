@@ -5,7 +5,6 @@ class ApiPostsController < ApplicationController
 
   def show
     post = Post.find(params[:id])
-    p post
     render json: post
   end
 
@@ -21,6 +20,8 @@ class ApiPostsController < ApplicationController
   private
 
   def post_params
-    params.require(:api_post).permit(:title, :media_type, :author)
+    params.require(:api_post).permit(
+      :title, :media_type, :author, :category, :link, :body
+    )
   end
 end
