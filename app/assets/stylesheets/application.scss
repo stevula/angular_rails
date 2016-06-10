@@ -14,11 +14,25 @@
 @import 'bootstrap';
 
 [class*='glyphicon-arrow'] {
+  display: block;
   cursor: pointer;
   font-size: large;
+}
+
+.arrows {
+  display: inline-block;
+}
+
+.badge {
+  margin-bottom: 50%;
 }
 
 .posts-list {
   list-style-type: none;
   padding: 0;
+}
+
+vote-arrows {
+  float: left;
+  margin-right: 5px;
 }

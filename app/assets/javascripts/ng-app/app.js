@@ -38,3 +38,4 @@ angular
 // TODO: figure out how to share voting arrows between posts and comments (diff model, same function)
 // TODO: show author on post detail page
 // TODO: show author on post view and listing
+// TODO: change color of vote arrow on click

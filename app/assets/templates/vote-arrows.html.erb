@@ -1,5 +1,5 @@
-<div>
-    <span class="glyphicon glyphicon-arrow-up pull-left" ng-click="incrementUpvotes(post)"></span>
-    <span class="badge pull-left">{{post.upvotes}}</span>
-    <span class="glyphicon glyphicon-arrow-down pull-left" ng-click="decrementUpvotes(post)"></span>
+<span class="badge">{{post.upvotes}}</span>
+<div class="arrows">
+    <span class="glyphicon glyphicon-arrow-up" ng-click="incrementUpvotes(post)"></span>
+    <span class="glyphicon glyphicon-arrow-down" ng-click="decrementUpvotes(post)"></span>
 </div>
