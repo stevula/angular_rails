@@ -1,6 +1,7 @@
 <!-- comments -->
 <h4>Comments</h4>
 
+<!-- if comments -->
 <ul ng-show="post.comments" class="posts-list list-group">
     <li class="list-group-item" ng-repeat="post in post.comments | orderBy: '-upvotes'">
 
@@ -9,7 +10,9 @@
     </li>
 </ul>
 
+<!-- else -->
 <p ng-hide="post.comments">No comments yet.</p>
+<!-- endIf -->
 
 <!-- add comment form -->
 <form class="comment-add-form" ng-submit="createComment(comment)">
