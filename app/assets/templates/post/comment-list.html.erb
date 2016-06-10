@@ -1,10 +1,22 @@
 <!-- comments -->
 <h4>Comments</h4>
 
-<ul class="posts-list list-group">
+<ul ng-show="post.comments" class="posts-list list-group">
     <li class="list-group-item" ng-repeat="post in post.comments | orderBy: '-upvotes'">
 
         <comment></comment>
 
     </li>
 </ul>
+
+<p ng-hide="post.comments">No comments yet.</p>
+
+<!-- add comment form -->
+<form class="comment-add-form" ng-submit="createComment(comment)">
+
+    <div class="form-group">
+        <textarea class="form-control" placeholder="write comment here" ng-model="comment.body"></textarea>
+    </div>
+
+    <button class="btn btn-primary" type="submit">submit comment</button>
+</form>

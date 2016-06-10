@@ -16,6 +16,11 @@ angular.module('diggit')
 
         return $http.post('/api/posts', post);
     };
+    post.createComment = function(comment) {
+        // TODO: write this method
+        console.log(comment)
+    };
+    // TODO: refactor. possibly combine increment and decrement also.
     post.incrementUpvotes = function(post) {
         if (post.upvoted) {
             // undo previous vote
@@ -33,6 +38,7 @@ angular.module('diggit')
             post.upvoted = true;
         }
     };
+    // TODO: refactor
     post.decrementUpvotes = function(post) {
         if (post.downvoted) {
             // undo previous vote

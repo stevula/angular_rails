@@ -18,7 +18,6 @@ angular
 }]);
 
 // TODO: add users
-// TODO: prohibit double-voting (except vote reversal)
 // TODO: pagination
 // TODO: prettify
 // TODO: post filters
@@ -40,3 +39,6 @@ angular
 // TODO: show last edited on
 // TODO: tidy up CSS
 // TODO: api integrations?
+// TODO: track downvotes as well as upvotes
+// TODO: create directives from comment/post forms
+// TODO: comment controller?
