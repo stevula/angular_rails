@@ -1,8 +1,5 @@
-<!-- comment voting arrows -->
-<span class="glyphicon glyphicon-arrow-up pull-left" ng-click="incrementUpvotes(comment)"></span>
-<span class="badge pull-left">{{comment.upvotes}}</span>
-<span class="glyphicon glyphicon-arrow-down pull-left" ng-click="decrementUpvotes(comment)"></span>
- &mdash; by {{comment.author}}
+<vote-arrows></vote-arrows>
+ &mdash; by {{post.author}}
 
 <!-- comment body -->
-<div class="comment-body">{{comment.body}}</div>
+<div class="comment-body">{{post.body}}</div>

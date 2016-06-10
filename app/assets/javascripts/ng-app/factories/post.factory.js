@@ -13,7 +13,6 @@ angular.module('diggit')
         // title cannot be blank. link & body cannot both be blank.
         // TODO: this causes console errors in a ctrlr promise
         if(!post.title || (!post.link && !post.body)) {return;}
-
         return $http.post('/api/posts', post);
     };
     post.incrementUpvotes = function(post) {
