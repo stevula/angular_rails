@@ -5,7 +5,6 @@ class ApiPostsController < ApplicationController
 
   def show
     post = Post.find(params[:id])
-    p post
     render json: post
   end
 

@@ -5,8 +5,8 @@ angular
 
     $routeProvider
     .when('/', {
-        templateUrl: 'main/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'home/home.html',
+        controller: 'HomeCtrl'
     })
     .when('/posts/:id*', {
         templateUrl: 'post/post.html',
@@ -15,11 +15,6 @@ angular
     .otherwise('/');
 
     $locationProvider.html5Mode(true);
-}])
-.run(['post', 'posts', function(post, posts) {
-    post.getPosts().then(function(resp) {
-        posts.posts = resp.data;
-    });
 }]);
 
 // TODO: add users

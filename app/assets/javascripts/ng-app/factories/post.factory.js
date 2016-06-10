@@ -21,7 +21,6 @@ angular.module('diggit')
     post.decrementUpvotes = function(post) {
         post.upvotes--;
     };
-    post.posts = posts.posts;
 
     return post;
 }]);
