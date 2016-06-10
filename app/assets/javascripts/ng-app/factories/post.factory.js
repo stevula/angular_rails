@@ -18,7 +18,7 @@ angular.module('diggit')
     };
     post.createComment = function(comment) {
         // TODO: write this method
-        console.log(comment)
+        alert("commenting disabled");
     };
     // TODO: refactor. possibly combine increment and decrement also.
     post.incrementUpvotes = function(post) {

@@ -19,19 +19,22 @@ angular.module('diggit')
         .then(function(resp) {
             $scope.post = resp.data;
 
-            // placeholder
+            // placeholder comment data
             $scope.post.comments = [{
                 author: 'anon',
                 body: "Potato chips",
-                upvotes: 0,
+                upvotes: 4,
                 createdAt: new Date()
             },
             {
                 author: "sue",
                 body: "freakazoid",
-                upvotes: 0,
+                upvotes: 4,
                 createdAt: new Date()
             }];
+
+            // just for development convenience so the new post appears at top
+            $scope.post.upvotes = 999;
 
             post.posts.push($scope.post);
 

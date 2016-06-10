@@ -8,8 +8,8 @@ angular.module('diggit')
             $scope.post = $filter('filter')(post.posts, {id: Number($routeParams.id)})[0];
         });
 
-        // TODO: DRYer solution? comment voting methods below identical to post 
-        // voting methods
+        $scope.createComment = post.createComment;
+
         $scope.incrementUpvotes = post.incrementUpvotes;
         $scope.decrementUpvotes = post.decrementUpvotes;
 }]);
