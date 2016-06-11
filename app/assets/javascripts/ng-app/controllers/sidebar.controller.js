@@ -6,7 +6,7 @@ angular.module('diggit')
         title: "",
         author: "anonymous",
         upvotes: 0,
-        link: "",
+        link: "http://",
         body: "",
         createdAt: new Date(),
         updatedAt: new Date(),
