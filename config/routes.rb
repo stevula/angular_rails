@@ -12,21 +12,22 @@ Rails.application.routes.draw do
         patch '/:id' => 'api_posts#update'
         delete '/:id' => 'api_posts#destroy'
       end
-
-      post '/signup' => 'api_users#create'
-      scope '/users' do
-        get '/' => 'api_users#index'
-
-        scope '/:id' do
-          get '/' => 'api_users#show'
-          patch '/' => 'api_users#update'
-          delete '/' => 'api_users#destroy'
-        end
-      end
-
-      post '/login' => 'api_sessions#create'
-      delete '/logout' => 'api_sessions#destroy'
     end
+
+    post '/signup' => 'api_users#create'
+    
+    scope '/users' do
+      get '/' => 'api_users#index'
+
+      scope '/:id' do
+        get '/' => 'api_users#show'
+        patch '/' => 'api_users#update'
+        delete '/' => 'api_users#destroy'
+      end
+    end
+
+    post '/login' => 'api_sessions#create'
+    delete '/logout' => 'api_sessions#destroy'
 
   end
 

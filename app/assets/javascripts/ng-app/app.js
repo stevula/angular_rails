@@ -18,10 +18,10 @@ angular
         templateUrl: 'user/signup.html',
         controller: 'UsersCtrl'
     })
-    .otherwise('/');
+    // .otherwise('/');
 
     $locationProvider.html5Mode(true);
 
-    AuthProvider.loginPath('/api/sessions/login');
-    AuthProvider.logoutPath('/api/sessions/logout');
+    AuthProvider.loginPath('/api/login');
+    AuthProvider.logoutPath('/api/logout');
 }]);

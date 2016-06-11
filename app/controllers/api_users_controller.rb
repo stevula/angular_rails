@@ -1,16 +1,30 @@
 class ApiUsersController < ApplicationController
-  def index
-    users = User.all
+  before_action :authenticate_user!, only: [:update, :destroy]
 
-    render json: users
+  def index
+    render json: User.all
   end
 
   def show
+  end
+
+  def create
+    user = User.new(user_params)
+
+    # TODO: add some conditional logic here
+    user.save
+    
+    render json: user
   end
 
   def update
   end
 
   def destroy
+  end
+
+  private 
+
+  def user_params
   end
 end

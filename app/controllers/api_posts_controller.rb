@@ -1,4 +1,6 @@
 class ApiPostsController < ApplicationController
+  before_action :authenticate_user!, only: [:update, :destroy]
+
   def index
     render json: Post.all
   end
