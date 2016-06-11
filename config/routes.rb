@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     #   end
     # end
 
+    # TODO: figure out how to get rid of devise views
     devise_for :users, controllers: {
       sessions: 'users/sessions'
     }
