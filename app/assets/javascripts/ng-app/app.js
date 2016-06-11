@@ -2,8 +2,8 @@
 
 angular
 .module('diggit', ['ngRoute', 'templates', 'Devise'])
-.config(['$routeProvider', '$locationProvider', 
-    function($routeProvider, $locationProvider) {
+.config(['$routeProvider', '$locationProvider', 'AuthProvider',
+    function($routeProvider, $locationProvider, AuthProvider) {
 
     $routeProvider
     .when('/', {
@@ -21,4 +21,6 @@ angular
     .otherwise('/');
 
     $locationProvider.html5Mode(true);
+
+    AuthProvider.loginPath('/api/users/login');
 }]);

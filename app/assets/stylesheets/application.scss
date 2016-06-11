@@ -14,9 +14,14 @@
 @import 'bootstrap';
 
 // nav
-.page-header h1 {
-  float: left;
+site-header {
+  display: block;
+
+  h1 {
+    display: inline-block;
+  }
 }
+page-header 
 
 // voting
 vote-arrows {

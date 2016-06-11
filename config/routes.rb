@@ -10,6 +10,17 @@ Rails.application.routes.draw do
       scope '/:id' do
         get '/' => 'api_posts#show'
       end
+
+      scope '/users' do
+        post '/' => 'api_users#signup'
+        patch '/:id' => 'api_users#update'
+        delete '/:id' => 'api_users#delete'
+      end
+
+      scope '/sessions' do
+        post '/' => 'api_sessions#login'
+        delete '/:id' => 'api_sessions#logout'
+      end
     end
 
   end

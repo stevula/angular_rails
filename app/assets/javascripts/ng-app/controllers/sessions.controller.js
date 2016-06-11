@@ -1,11 +1,34 @@
 angular.module('diggit')
-.controller('SessionsCtrl', ['$scope', function($scope) {
-    var submitLogin = function(loginForm) {
-        // TODO
-        console.log("loginForm")
+.controller('SessionsCtrl', ['Auth', '$scope', function(Auth, $scope) {
+    var credentials = {
+        email: 'user@domain.com',
+        password: 'password1'
+    };
+    var config = {
+        headers: {
+            'X-HTTP-Method-Override': 'POST'
+        }
     };
 
-    var signOut = function() {
+    Auth.currentUser().then(function(user) {
+        $scope.user = user;
+    }, function(err) {
+        console.log('not logged in: ', err)
+    });
+
+    Auth.login(credentials, config).then(function(user) {
+        console.log(user);
+    }, function(err) {
+        console.log("login error: ", err)
+    });
+
+    $scope.submitLogin = function(loginForm) {
         // TODO
+        console.log(loginForm);
+    };
+
+    $scope.signOut = function() {
+        // TODO
+        console.log(submitLogin);
     };
 }]);
