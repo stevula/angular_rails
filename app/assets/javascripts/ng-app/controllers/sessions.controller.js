@@ -10,11 +10,11 @@ angular.module('diggit')
         }
     };
 
-    Auth.currentUser().then(function(user) {
-        $scope.user = user;
-    }, function(err) {
-        console.log('not logged in: ', err)
-    });
+    // Auth.currentUser().then(function(user) {
+    //     $scope.user = user;
+    // }, function(err) {
+    //     console.log('not logged in: ', err)
+    // });
 
     Auth.login(credentials, config).then(function(user) {
         console.log(user);

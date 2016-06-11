@@ -22,5 +22,6 @@ angular
 
     $locationProvider.html5Mode(true);
 
-    AuthProvider.loginPath('/api/users/login');
+    AuthProvider.loginPath('/api/sessions/login');
+    AuthProvider.logoutPath('/api/sessions/logout');
 }]);

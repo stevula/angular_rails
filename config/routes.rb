@@ -9,22 +9,28 @@ Rails.application.routes.draw do
       
       scope '/:id' do
         get '/' => 'api_posts#show'
+        patch '/:id' => 'api_posts#update'
+        delete '/:id' => 'api_posts#destroy'
       end
 
+      post '/signup' => 'api_users#create'
       scope '/users' do
-        post '/' => 'api_users#signup'
-        patch '/:id' => 'api_users#update'
-        delete '/:id' => 'api_users#delete'
+        get '/' => 'api_users#index'
+
+        scope '/:id' do
+          get '/' => 'api_users#show'
+          patch '/' => 'api_users#update'
+          delete '/' => 'api_users#destroy'
+        end
       end
 
-      scope '/sessions' do
-        post '/' => 'api_sessions#login'
-        delete '/:id' => 'api_sessions#logout'
-      end
+      post '/login' => 'api_sessions#create'
+      delete '/logout' => 'api_sessions#destroy'
     end
 
   end
 
+  # hand off non-api routes to Angular
   get '*path' => 'application#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

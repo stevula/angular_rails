@@ -17,6 +17,12 @@ class ApiPostsController < ApplicationController
     render json: post
   end
 
+  def update
+  end
+
+  def destroy
+  end
+
   private
 
   def post_params

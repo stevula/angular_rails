@@ -1,3 +1,5 @@
+User.create(username: "admin", password: "password", email: "admin@diggit.com")
+
 MEDIA = ["link", "text"]
 CATEGORIES = ["random", "tech", "gaming", "food"]
 
