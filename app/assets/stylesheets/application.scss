@@ -67,10 +67,13 @@ comment-list {
 // users
 login {
   display: block;
-  font-size: small;
 
+  // this is to override .form-control styling for login only
   input[type="text"],
-  input[type="password"] {
-    height: 0.5em;
+  input[type="password"],
+  input[type="submit"] {
+    font-size: small;
+    height: 1.5em;
+    padding: 0;
   }
 }
