@@ -1,5 +1,5 @@
 angular.module('diggit')
-.controller('PostCtrl', ['$scope', '$routeParams', 'post', '$filter',
+.controller('PostsCtrl', ['$scope', '$routeParams', 'post', '$filter',
     function($scope, $routeParams, post, $filter) {
         $scope.postFactory = post;
 

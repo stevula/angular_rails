@@ -71,9 +71,10 @@ login {
   // this is to override .form-control styling for login only
   input[type="text"],
   input[type="password"],
-  input[type="submit"] {
+  button[type="submit"] {
     font-size: small;
     height: 1.5em;
+    line-height: 1em;
     padding: 0;
   }
 }

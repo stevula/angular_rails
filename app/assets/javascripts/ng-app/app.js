@@ -1,3 +1,5 @@
+'use strict';
+
 angular
 .module('diggit', ['ngRoute', 'templates'])
 .config(['$routeProvider', '$locationProvider', 
@@ -11,6 +13,10 @@ angular
     .when('/posts/:id*', {
         templateUrl: 'post/post.html',
         controller: 'PostCtrl'
+    })
+    .when('/signup', {
+        templateUrl: 'user/signup.html',
+        controller: 'UsersCtrl'
     })
     .otherwise('/');
 
