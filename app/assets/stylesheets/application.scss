@@ -13,38 +13,50 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
-[class*='glyphicon-arrow'] {
-  display: block;
-  cursor: pointer;
-  font-size: large;
-
+// nav
+.page-header h1 {
+  float: left;
 }
 
-.glyphicon-arrow-up.voted {
-  color: green;
+// voting
+vote-arrows {
+  float: left;
+  margin-right: 15px;
+
+  .arrows-container {
+    display: inline-block;
+  }
+
+  [class*='glyphicon-arrow'] {
+    display: block;
+    cursor: pointer;
+    font-size: large;
+
+  }
+
+  .glyphicon-arrow-up.voted {
+    color: green;
+  }
+
+  .glyphicon-arrow-down.voted {
+    color: red;
+  }
+
+  .badge {
+    margin-right: 5px;
+    margin-bottom: 50%;
+  }
 }
 
-.glyphicon-arrow-down.voted {
-  color: red;
-}
-
-.arrows {
-  display: inline-block;
-}
-
-.badge {
-  margin-right: 5px;
-  margin-bottom: 50%;
-}
-
+// posts index
 .posts-list {
   list-style-type: none;
   padding: 0;
 }
 
-vote-arrows {
-  float: left;
-  margin-right: 15px;
+// post show
+post-content {
+  display: block;
 }
 
 comment-list {
@@ -52,6 +64,13 @@ comment-list {
   display: block;
 }
 
-post-content {
+// users
+login {
   display: block;
+  font-size: small;
+
+  input[type="text"],
+  input[type="password"] {
+    height: 0.5em;
+  }
 }

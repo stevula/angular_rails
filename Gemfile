@@ -36,6 +36,7 @@ gem 'bower-rails'
 gem 'angular-rails-templates'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'faker'
+gem 'devise'
 gem 'omniauth'
 gem 'devise_token_auth'
 
