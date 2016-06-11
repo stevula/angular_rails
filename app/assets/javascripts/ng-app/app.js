@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-.module('diggit', ['ngRoute', 'templates'])
+.module('diggit', ['ngRoute', 'templates', 'Devise'])
 .config(['$routeProvider', '$locationProvider', 
     function($routeProvider, $locationProvider) {
 
@@ -17,9 +17,6 @@ angular
     .when('/signup', {
         templateUrl: 'user/signup.html',
         controller: 'UsersCtrl'
-    })
-    .when('/signout', {
-        // send API call and redirect
     })
     .otherwise('/');
 

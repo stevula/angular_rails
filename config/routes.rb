@@ -11,6 +11,7 @@ Rails.application.routes.draw do
         get '/' => 'api_posts#show'
       end
     end
+
   end
 
   get '*path' => 'application#index'
