@@ -18,6 +18,9 @@ angular
         templateUrl: 'user/signup.html',
         controller: 'UsersCtrl'
     })
+    .when('/signout', {
+        // send API call and redirect
+    })
     .otherwise('/');
 
     $locationProvider.html5Mode(true);

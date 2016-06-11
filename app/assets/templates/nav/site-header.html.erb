@@ -1,5 +1,6 @@
 <header class="page-header col-md-10 col-md-offset-1">
     <h1><a href="/">diggit</a></h1>
 
-    <login class="pull-right" ></login>
+    <login class="pull-right" ng-hide="user.id"></login>
+    <account-options class="pull-right" ng-show="user.id"></account-options>
 </header>
