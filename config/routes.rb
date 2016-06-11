@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount_devise_token_auth_for 'User', at: 'auth'
+  # mount_devise_token_auth_for 'User', at: 'auth'
   root 'application#index'
 
   scope '/api' do
@@ -14,21 +14,26 @@ Rails.application.routes.draw do
       end
     end
 
-    post '/signup' => 'api_users#create'
+    # post '/signup' => 'api_users#create'
     
-    scope '/users' do
-      get '/' => 'api_users#index'
+    # devise_scope :users do
+    #   get '/' => 'api_users#index'
 
-      scope '/:id' do
-        get '/' => 'api_users#show'
-        patch '/' => 'api_users#update'
-        delete '/' => 'api_users#destroy'
-      end
-    end
+    #   scope '/sessions' do
+    #     post '/login' => 'api_sessions#create'
+    #     delete '/logout' => 'api_sessions#destroy'
+    #   end
 
-    post '/login' => 'api_sessions#create'
-    delete '/logout' => 'api_sessions#destroy'
+    #   scope '/:id' do
+    #     get '/' => 'api_users#show'
+    #     patch '/' => 'api_users#update'
+    #     delete '/' => 'api_users#destroy'
+    #   end
+    # end
 
+    devise_for :users, controllers: {
+      sessions: 'users/sessions'
+    }
   end
 
   # hand off non-api routes to Angular
