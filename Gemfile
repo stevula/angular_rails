@@ -36,6 +36,8 @@ gem 'bower-rails'
 gem 'angular-rails-templates'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'faker'
+gem 'omniauth'
+gem 'devise_token_auth'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
