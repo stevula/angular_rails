@@ -9,29 +9,29 @@ Rails.application.routes.draw do
       
       scope '/:id' do
         get '/' => 'posts#show'
-        patch '/:id' => 'posts#update'
-        delete '/:id' => 'posts#destroy'
+        patch '/' => 'posts#update'
+        delete '/' => 'posts#destroy'
       end
     end
 
-    # post '/signup' => 'api_users#create'
     
-    # devise_scope :users do
-    #   get '/' => 'api_users#index'
+    devise_for :users, :controllers => {sessions: 'api/sessions'} do
+      # get '/' => 'users#index'
+      # post '/signup' => 'users#create'
 
-    #   scope '/sessions' do
-    #     post '/login' => 'api_sessions#create'
-    #     delete '/logout' => 'api_sessions#destroy'
-    #   end
+      post '/log_in' => 'sessions#create'
+      delete '/log_out' => 'devise/sessions#destroy'
 
-    #   scope '/:id' do
-    #     get '/' => 'api_users#show'
-    #     patch '/' => 'api_users#update'
-    #     delete '/' => 'api_users#destroy'
-    #   end
-    # end
+      # scope '/:id' do
+        # get '/' => 'users#show'
+        # patch '/' => 'users#update'
+        # delete '/' => 'users#destroy'
+      # end
+    end
 
-    # TODO: figure out how to get rid of devise views
+    scope '/users' do
+      get '/after_sign_in' => 'sessions#after_create'
+    end
   end
 
   # namespace :api do

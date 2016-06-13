@@ -1,6 +1,7 @@
 angular.module('diggit')
 .controller('SessionsCtrl', ['Auth', '$scope', function(Auth, $scope) {
     var credentials = {
+        username: 'admin',
         email: 'admin@diggit.com',
         password: 'password'
     };
