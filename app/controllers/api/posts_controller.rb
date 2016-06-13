@@ -1,4 +1,4 @@
-class ApiPostsController < ApplicationController
+class Api::PostsController < ApplicationController
   before_action :authenticate_user!, only: [:update, :destroy]
 
   def index

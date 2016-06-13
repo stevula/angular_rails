@@ -2,15 +2,15 @@ Rails.application.routes.draw do
   # mount_devise_token_auth_for 'User', at: 'auth'
   root 'application#index'
 
-  scope '/api' do
+  namespace :api do
     scope '/posts' do
-      get '/' => 'api_posts#index'
-      post '/' => 'api_posts#create'
+      get '/' => 'posts#index'
+      post '/' => 'posts#create'
       
       scope '/:id' do
-        get '/' => 'api_posts#show'
-        patch '/:id' => 'api_posts#update'
-        delete '/:id' => 'api_posts#destroy'
+        get '/' => 'posts#show'
+        patch '/:id' => 'posts#update'
+        delete '/:id' => 'posts#destroy'
       end
     end
 
@@ -32,10 +32,11 @@ Rails.application.routes.draw do
     # end
 
     # TODO: figure out how to get rid of devise views
-    devise_for :users, controllers: {
-      sessions: 'users/sessions'
-    }
   end
+
+  # namespace :api do
+  #   devise_for :sessions
+  # end
 
   # hand off non-api routes to Angular
   get '*path' => 'application#index'
