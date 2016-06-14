@@ -5,13 +5,16 @@ class Api::SessionsController < Devise::SessionsController
   
   def create
     user = User.find_for_database_authentication(email: params[:user][:email])
+    p "user data found: ", user
     return invalid_login_attempt unless user
 
     if user.valid_password?(params[:user][:password])
       # TODO: remove after confirmations added
       user.skip_confirmation!
+      p "user had valid password"
 
       sign_in("user", user)
+      p "user signed in: ", user
       render json: user
       return
     end
@@ -21,6 +24,7 @@ class Api::SessionsController < Devise::SessionsController
   
   def destroy
     sign_out(warden.user)
+    p "user signed out"
     render nothing: true
     return
   end
@@ -28,11 +32,13 @@ class Api::SessionsController < Devise::SessionsController
   protected
 
   def ensure_params_exist
+    p "missing user[username] param"
     return unless params[:user][:username].blank?
-    render json: {success: false, message: "missing user_login parameter"}, status: 422
+    render json: {success: false, message: "missing username parameter"}, status: 422
   end
 
   def invalid_login_attempt
+    p "invalid login attempt"
     warden.custom_failure!
     render json:  {success: false, message: "Error with your login or password"}, status: 401
   end
