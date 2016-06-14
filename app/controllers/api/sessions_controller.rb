@@ -1,6 +1,7 @@
 class Api::SessionsController < Devise::SessionsController
-  prepend_before_filter :require_no_authentication, :only => [:create]
-  before_filter :ensure_params_exist, except: [:destroy]
+  # prepend_before_filter :require_no_authentication, :only => [:create]
+  # before_filter :ensure_params_exist, except: [:destroy]
+  # prevent redirect for signed out users
   skip_before_filter :verify_signed_out_user
   
   def create
