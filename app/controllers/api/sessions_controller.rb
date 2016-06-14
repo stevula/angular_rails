@@ -1,12 +1,13 @@
 class Api::SessionsController < Devise::SessionsController
   prepend_before_filter :require_no_authentication, :only => [:create]
-  before_filter :ensure_params_exist
+  before_filter :ensure_params_exist, except: [:destroy]
+  skip_before_filter :verify_signed_out_user
   
   def create
-    user = User.find_for_database_authentication(email: user_params[:email])
+    user = User.find_for_database_authentication(email: params[:user][:email])
     return invalid_login_attempt unless user
 
-    if user.valid_password?(user_params[:password])
+    if user.valid_password?(params[:user][:password])
       # TODO: remove after confirmations added
       user.skip_confirmation!
 
@@ -19,17 +20,15 @@ class Api::SessionsController < Devise::SessionsController
   end
   
   def destroy
-    sign_out(user_name)
+    sign_out(warden.user)
+    render nothing: true
+    return
   end
 
   protected
 
-  def user_params
-    params.require(:user).permit(:username, :email, :password)
-  end
-
   def ensure_params_exist
-    return unless user_params[:username].blank?
+    return unless params[:user][:username].blank?
     render json: {success: false, message: "missing user_login parameter"}, status: 422
   end
 

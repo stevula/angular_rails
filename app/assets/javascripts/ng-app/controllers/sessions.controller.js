@@ -1,22 +1,20 @@
 angular.module('diggit')
-.controller('SessionsCtrl', ['session', '$scope', function(session, $scope) {
-
-    // Auth.login(credentials, config).then(function(user) {
-    //     console.log(user);
-    // }, function(err) {
-    //     console.log("login error: ", err)
-    // });
-
-    $scope.submitLogin = function(credentials, config) {
-        session.login.then(function(user) {
-            // console.log("HI")
-            console.log(user)
+.controller('SessionsCtrl', ['session', '$scope', 'Auth', function(session, $scope, Auth) {
+    $scope.logIn = function(credentials, config) {
+        session.logIn.then(function(user) {
+            console.log("login success: ", user);
             $scope.user = user;
+        }, function(err) {
+            console.log("login error: ", err);
         });
     };
 
-    $scope.signOut = function() {
-        // TODO
-        console.log(submitLogin);
+    $scope.logOut = function() {
+        session.logOut.then(function(resp) {
+            delete $scope.user;
+            console.log("logout success: ", resp);
+        }, function(err) {
+            console.log("logout error: ", err);
+        });
     };
 }]);
