@@ -18,7 +18,7 @@ angular
         templateUrl: 'user/signup.html',
         controller: 'UsersCtrl'
     })
-    // .otherwise('/');
+    .otherwise('/');
 
     $locationProvider.html5Mode(true);
 
