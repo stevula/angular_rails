@@ -1,20 +1,28 @@
-class Api::SessionsController < Api::BaseController
+class Api::SessionsController < Devise::SessionsController
   prepend_before_filter :require_no_authentication, :only => [:create]
   before_filter :ensure_params_exist
   
   def create
     # build_resource
-    resource = User.find_for_database_authentication(username: user_params[:username])
+    resource = User.find_for_database_authentication(uid: user_params[:email])
     return invalid_login_attempt unless resource
 
-    debugger
     if resource.valid_password?(user_params[:password])
+      # binding.pry
+      resource.skip_confirmation!
       sign_in("user", resource)
+      render json: {
+        success: true,
+        # auth_token: resource.authentication_token,
+        # login: resource.login,
+        email: resource.email
+      }
       return
     end
     invalid_login_attempt
   end
 
+  # workaround for Devise sign_in needing a redirect action/url
   def after_create
     render json: {
       success: true,
