@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   # def after_sign_in_path_for(resource)
-  #   debugger
+  #   binding.pry
   #   sign_in_url = url_for(action: :after_create, controller: 'sessions', only_path: false, protocol: 'http')
   # end
 end

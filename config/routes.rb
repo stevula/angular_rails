@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
       post '/sign_in' => 'sessions#create'
       delete '/sign_out' => 'devise/sessions#destroy'
+      # get '/after_sign_in' => 'sessions#after_create'
 
       # scope '/:id' do
         # get '/' => 'users#show'
