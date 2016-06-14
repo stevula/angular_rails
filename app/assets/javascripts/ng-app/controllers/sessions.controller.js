@@ -1,11 +1,8 @@
 angular.module('diggit')
 .controller('SessionsCtrl', ['session', '$scope', 'Auth', function(session, $scope, Auth) {
     $scope.user = {};
-    $scope.loginForm = {
-        username: 'admin',
-        email: 'admin@diggit.com',
-        password: 'password'
-    };
+    $scope.loginForm = {};
+
     var loginConfig = {
         headers: {
             'X-HTTP-Method-Override': 'POST'
@@ -16,7 +13,6 @@ angular.module('diggit')
             'X-HTTP-Method-Override': 'DELETE'
         }
     };
-
     $scope.login = function(credentials, config) {
         Auth.login($scope.loginForm, loginConfig).then(function(user) {
             console.log("login success: ", user);
