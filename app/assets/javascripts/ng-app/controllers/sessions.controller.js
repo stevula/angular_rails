@@ -1,17 +1,33 @@
 angular.module('diggit')
 .controller('SessionsCtrl', ['session', '$scope', 'Auth', function(session, $scope, Auth) {
-    $scope.logIn = function(credentials, config) {
-        session.logIn.then(function(user) {
+    $scope.user = {};
+    $scope.loginForm = {
+        username: 'admin',
+        email: 'admin@diggit.com',
+        password: 'password'
+    };
+    var loginConfig = {
+        headers: {
+            'X-HTTP-Method-Override': 'POST'
+        }
+    };
+    var logoutConfig = {
+        headers: {
+            'X-HTTP-Method-Override': 'DELETE'
+        }
+    };
+
+    $scope.login = function(credentials, config) {
+        Auth.login($scope.loginForm, loginConfig).then(function(user) {
             console.log("login success: ", user);
             $scope.user = user;
         }, function(err) {
             console.log("login error: ", err);
         });
     };
-
-    $scope.logOut = function() {
-        session.logOut.then(function(resp) {
-            delete $scope.user;
+    $scope.logout = function(config) {
+        Auth.logout(config).then(function(resp) {
+            $scope.user = {};
             console.log("logout success: ", resp);
         }, function(err) {
             console.log("logout error: ", err);

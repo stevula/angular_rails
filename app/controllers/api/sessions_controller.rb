@@ -5,7 +5,7 @@ class Api::SessionsController < Devise::SessionsController
   
   def create
     user = User.find_for_database_authentication(email: params[:user][:email])
-    p "user data found: ", user
+    p "user data found in db: ", user
     return invalid_login_attempt unless user
 
     if user.valid_password?(params[:user][:password])
@@ -25,7 +25,7 @@ class Api::SessionsController < Devise::SessionsController
   def destroy
     sign_out(warden.user)
     p "user signed out"
-    render nothing: true
+    render nothing: true, status: :ok
     return
   end
 
@@ -57,6 +57,7 @@ class Api::SessionsController < Devise::SessionsController
     end
 
     if authenticated && resource = warden.user(resource_name)
+      p "user already signed in: ", warden.user
       flash[:alert] = I18n.t("devise.failure.already_authenticated")
     end
   end
