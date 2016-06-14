@@ -1,13 +1,36 @@
 Rails.application.routes.draw do
+  # mount_devise_token_auth_for 'User', at: 'auth'
   root 'application#index'
 
-  scope '/api' do
+  namespace :api do
     scope '/posts' do
-      get '/' => 'api_posts#index'
-      post '/' => 'api_posts#create'
+      get '/' => 'posts#index'
+      post '/' => 'posts#create'
+      
+      scope '/:id' do
+        get '/' => 'posts#show'
+        patch '/' => 'posts#update'
+        delete '/' => 'posts#destroy'
+      end
+    end
+
+    
+    devise_for :users, :controllers => {sessions: 'api/sessions'} do
+      # get '/' => 'users#index'
+      # post '/signup' => 'users#create'
+
+      post '/sign_in' => 'sessions#create'
+      delete '/sign_out' => 'devise/sessions#destroy'
+
+      # scope '/:id' do
+        # get '/' => 'users#show'
+        # patch '/' => 'users#update'
+        # delete '/' => 'users#destroy'
+      # end
     end
   end
 
+  # hand off non-api routes to Angular
   get '*path' => 'application#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

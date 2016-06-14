@@ -1,0 +1,18 @@
+<vote-arrows></vote-arrows>
+
+<!-- post info -->
+<span class="post">
+    <a href="{{post.link}}" ng-show="post.mediaType == 'link'">{{post.title}}</a>
+    <span ng-show="post.mediaType == 'text'">{{post.title}}</span>
+</span>
+&mdash;
+
+<!-- comments info -->
+<span>
+    <a href="/posts/{{post.id}}">{{post.comments.length}} comments</a>
+</span>
+
+<!-- post date -->
+<div>
+    <em>posted by</em> {{post.author}} <em>on</em> {{post.createdAt | date}}
+</div>

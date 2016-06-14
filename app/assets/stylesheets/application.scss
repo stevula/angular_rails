@@ -13,12 +13,73 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
-[class*='glyphicon-arrow'] {
-  cursor: pointer;
-  font-size: large;
+// nav
+site-header {
+  display: block;
+
+  h1 {
+    display: inline-block;
+  }
+}
+page-header 
+
+// voting
+vote-arrows {
+  float: left;
+  margin-right: 15px;
+
+  .arrows-container {
+    display: inline-block;
+  }
+
+  [class*='glyphicon-arrow'] {
+    display: block;
+    cursor: pointer;
+    font-size: large;
+
+  }
+
+  .glyphicon-arrow-up.voted {
+    color: green;
+  }
+
+  .glyphicon-arrow-down.voted {
+    color: red;
+  }
+
+  .badge {
+    margin-right: 5px;
+    margin-bottom: 50%;
+  }
 }
 
+// posts index
 .posts-list {
   list-style-type: none;
   padding: 0;
+}
+
+// post show
+post-content {
+  display: block;
+}
+
+comment-list {
+  margin-top: 2em;
+  display: block;
+}
+
+// users
+.login-area {
+  display: block;
+
+  // this is to override .form-control styling for login only
+  input[type="text"],
+  input[type="password"],
+  button[type="submit"] {
+    font-size: small;
+    height: 1.5em;
+    line-height: 1em;
+    padding: 0;
+  }
 }
