@@ -21,18 +21,12 @@ Rails.application.routes.draw do
 
       post '/sign_in' => 'sessions#create'
       delete '/sign_out' => 'devise/sessions#destroy'
-      # get '/after_sign_in' => 'sessions#after_create'
 
       # scope '/:id' do
         # get '/' => 'users#show'
         # patch '/' => 'users#update'
         # delete '/' => 'users#destroy'
       # end
-    end
-
-    # part of a workaround due to the redirect action in Devise sign_in
-    scope '/users' do
-      get '/after_sign_in' => 'sessions#after_create'
     end
   end
 

@@ -1,44 +1,26 @@
 class Api::SessionsController < Devise::SessionsController
+  # overrides inherited before filter. seems counterintuitive...
   prepend_before_filter :require_no_authentication, :except => [:create]
   before_filter :ensure_params_exist
-  binding.pry
   
   def create
-    binding.pry
-    # build_resource
-    resource = User.find_for_database_authentication(email: user_params[:email])
-    binding.pry
-    return invalid_login_attempt unless resource
+    user = User.find_for_database_authentication(email: user_params[:email])
+    return invalid_login_attempt unless user
 
-    if resource.valid_password?(user_params[:password])
-      binding.pry
-      resource.skip_confirmation!
-      sign_in("user", resource)
-      binding.pry
+    if user.valid_password?(user_params[:password])
+      user.skip_confirmation!
+      sign_in("user", user)
       render json: {
         success: true,
-        # auth_token: resource.authentication_token,
-        # login: resource.login,
-        email: resource.email
+        email: user.email
       }
       return
     end
     invalid_login_attempt
   end
-
-  # workaround for Devise sign_in needing a redirect action/url
-  def after_create
-    binding.pry
-    render json: {
-      success: true,
-      auth_token: resource.authentication_token,
-      login: resource.login,
-      email: resource.email
-    }
-  end
   
   def destroy
-    sign_out(resource_name)
+    sign_out(user_name)
   end
 
   protected

@@ -8,9 +8,4 @@ class ApplicationController < ActionController::Base
 
   def index
   end
-
-  # def after_sign_in_path_for(resource)
-  #   binding.pry
-  #   sign_in_url = url_for(action: :after_create, controller: 'sessions', only_path: false, protocol: 'http')
-  # end
 end
