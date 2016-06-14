@@ -1,6 +1,7 @@
 class Api::SessionsController < Devise::SessionsController
-  # overrides inherited before filter. seems counterintuitive...
-  prepend_before_filter :require_no_authentication, :except => [:create]
+  # overrides inherited before filter, which was redirecting with #create.
+  # not sure why this fixed it, unless user already authenticated, but that doesn't seem to be the case.
+  prepend_before_filter :require_no_authentication, :only => [:new]
   before_filter :ensure_params_exist
   
   def create
