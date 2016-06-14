@@ -1,5 +1,4 @@
 class Api::SessionsController < Devise::SessionsController
-  # will leave as is since this project is mainly for angular practice
   prepend_before_filter :require_no_authentication, :only => [:create]
   before_filter :ensure_params_exist
   
@@ -8,14 +7,14 @@ class Api::SessionsController < Devise::SessionsController
     return invalid_login_attempt unless user
 
     if user.valid_password?(user_params[:password])
+      # TODO: remove after confirmations added
       user.skip_confirmation!
+
       sign_in("user", user)
-      render json: {
-        success: true,
-        email: user.email
-      }
+      render json: user
       return
     end
+
     invalid_login_attempt
   end
   
@@ -39,7 +38,7 @@ class Api::SessionsController < Devise::SessionsController
     render json:  {success: false, message: "Error with your login or password"}, status: 401
   end
 
-  # hack to prevent inherited devise method from redirecting to non-existent page when already signed in
+  # override inherited devise method from redirecting to non-existent page when already signed in
   def require_no_authentication
     assert_is_devise_resource!
     return unless is_navigational_format?
