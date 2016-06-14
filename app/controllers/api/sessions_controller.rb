@@ -1,7 +1,6 @@
 class Api::SessionsController < Devise::SessionsController
-  # overrides inherited before filter, which was redirecting with #create.
-  # not sure why this fixed it, unless user already authenticated, but that doesn't seem to be the case.
-  prepend_before_filter :require_no_authentication, :only => [:new]
+  # will leave as is since this project is mainly for angular practice
+  prepend_before_filter :require_no_authentication, :only => [:create]
   before_filter :ensure_params_exist
   
   def create
@@ -38,5 +37,23 @@ class Api::SessionsController < Devise::SessionsController
   def invalid_login_attempt
     warden.custom_failure!
     render json:  {success: false, message: "Error with your login or password"}, status: 401
+  end
+
+  # hack to prevent inherited devise method from redirecting to non-existent page when already signed in
+  def require_no_authentication
+    assert_is_devise_resource!
+    return unless is_navigational_format?
+    no_input = devise_mapping.no_input_strategies
+
+    authenticated = if no_input.present?
+      args = no_input.dup.push scope: resource_name
+      warden.authenticate?(*args)
+    else
+      warden.authenticated?(resource_name)
+    end
+
+    if authenticated && resource = warden.user(resource_name)
+      flash[:alert] = I18n.t("devise.failure.already_authenticated")
+    end
   end
 end

@@ -30,10 +30,6 @@ Rails.application.routes.draw do
     end
   end
 
-  # namespace :api do
-  #   devise_for :sessions
-  # end
-
   # hand off non-api routes to Angular
   get '*path' => 'application#index'
 
