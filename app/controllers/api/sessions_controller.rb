@@ -33,13 +33,13 @@ class Api::SessionsController < Devise::SessionsController
   protected
 
   def ensure_params_exist
-    p "missing user[username] param"
+    p "missing user[username] param, params: #{params}"
     return unless params[:user][:username].blank?
     render json: {success: false, message: "missing username parameter"}, status: 422
   end
 
   def invalid_login_attempt
-    p "invalid login attempt"
+    p "invalid login attempt, params: #{params}"
     warden.custom_failure!
     render json:  {success: false, message: "Error with your login or password"}, status: 401
   end
@@ -59,6 +59,7 @@ class Api::SessionsController < Devise::SessionsController
 
     if authenticated && resource = warden.user(resource_name)
       p "user already signed in: ", warden.user
+      p "params: #{params}"
       flash[:alert] = I18n.t("devise.failure.already_authenticated")
     end
   end
