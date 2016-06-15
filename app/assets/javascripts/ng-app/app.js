@@ -12,7 +12,7 @@ angular
     })
     .when('/posts/:id*', {
         templateUrl: 'post/post.html',
-        controller: 'PostCtrl'
+        controller: 'PostsCtrl'
     })
     .when('/signup', {
         templateUrl: 'user/signup.html',
