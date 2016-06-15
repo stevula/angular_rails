@@ -1,7 +1,8 @@
 angular.module('diggit')
 .controller('SessionsCtrl', ['session', '$scope', 'Auth', function(session, $scope, Auth) {
     $scope.user = {};
-    $scope.loginForm = {};
+    // TODO: placeholder until signup implemented
+    $scope.loginForm = {username: 'admin', email: 'admin@diggit.com', password: 'password'};
 
     var loginConfig = {
         headers: {
